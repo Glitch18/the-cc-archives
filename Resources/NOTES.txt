@@ -1,0 +1,11 @@
+Linova and Kingdom (https://codeforces.com/problemset/problem/1336/A):
+	For any tree problems where the number of nodes is n and the special nodes to be
+	selected among these n nodes are k. 
+	If there is a restriction that n,k are less than 1000 or 2000,
+	then it's a very strong signal that you have to use DP on the tree. 
+
+Optimization problems on trees are generally DP.
+If not DP, maybe it's greedy
+
+FOR DATA STRUCTURES WHERE YOU CAN INSERT REMOVE AND RETRIEVE maximum elements:
+MaxHeap
