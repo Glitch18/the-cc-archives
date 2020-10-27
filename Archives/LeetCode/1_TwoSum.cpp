@@ -8,12 +8,12 @@ public:
         unordered_map<int,int> store;
         vector<int> ans;
         for(int i=0;i<nums.size();i++){
-            store[nums[i]]=i;
             auto itr = store.find(target-nums[i]);
             if(itr!=store.end() && itr->second!=i){
                 ans = {i,itr->second};
                 break;
             }
+            store[nums[i]]=i;
         }
         return ans;
     }
