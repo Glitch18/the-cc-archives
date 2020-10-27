@@ -1,3 +1,4 @@
+//https://practice.geeksforgeeks.org/problems/binary-tree-to-dll/1
 pair<Node*,Node*> inorder(Node* root,Node* parent,bool isLeft){
     if(root==NULL) return {parent,parent};
     if(root->left==NULL && root->right==NULL){
