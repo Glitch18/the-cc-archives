@@ -20,9 +20,9 @@ int reverse(struct node* head,int k){
     curr->next = prev;
     prev=curr;
     curr=next;
-    if((count+1)%k==0 || curr==NULL){
+    if(((count++)+1)%k==0 || curr==NULL){
       *master = prev;
-      &master = &(goToTheEnd(prev)->next);
+       master = &(goToTheEnd(prev)->next);
     }
   }
 }
