@@ -14,3 +14,23 @@ public:
 };
 
 //Using KMP
+class Solution {
+public:
+    string shortestPalindrome(string s) {
+        int n = s.size();
+        string rev(s);
+        reverse(rev.begin(),rev.end());
+        string new_s = s + "#" + rev;
+        int j=0;
+
+        vector<int> lookup = {0};
+
+        for(int i=1;i<new_s.size();i++){
+            while(j>0 && new_s[j]!=new_s[i]) j = lookup[j-1];
+            if(new_s[j]==new_s[i]) j++;
+            lookup.push_back(j);
+        }
+
+        return (rev.substr(0,n-lookup[new_s.size()-1])+s);
+    }
+};
