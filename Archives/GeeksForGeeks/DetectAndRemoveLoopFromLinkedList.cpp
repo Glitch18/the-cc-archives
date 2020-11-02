@@ -1,4 +1,34 @@
 //https://practice.geeksforgeeks.org/problems/remove-loop-in-linked-list/1#
+
+//Adding a simpler implementation below: see further for earlier implementation
+
+void removeLoop(Node* head)
+{
+    Node* slow = head;
+    Node* fast = head;
+    bool flag = 0;
+
+    while(slow && fast && fast->next){
+        slow = slow->next;
+        fast = fast->next->next;
+        if(slow==fast){
+            flag = 1;
+            break;
+        }
+    }
+    if(!flag) return;
+    slow = head;
+    while(slow!=fast){
+        slow = slow->next;
+        fast = fast->next;
+    } // found the starting of the cycle.
+    while(slow->next != fast) slow = slow->next;
+    slow->next = NULL;
+    return;
+}
+
+// earlier implementation:-
+
 void removeLoop(Node* head){
     Node* slow = head, *fast = head;
     bool flag = 0;
