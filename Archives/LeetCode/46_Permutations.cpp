@@ -11,7 +11,7 @@ public:
         for(int i=0;i<nums.size();i++){
             curr.push_back(nums[i]);
             vector<int> newNums = nums;
-            newNums.erase(find(newNums.begin(),newNums.end(),nums[i]));
+            newNums.erase(newNums.begin()+i);
             addPermutations(newNums,ans,curr);
             curr.pop_back();
         }
