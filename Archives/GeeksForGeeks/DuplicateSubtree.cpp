@@ -7,6 +7,8 @@ const char MARKER = "$";
 unordered_set<string> memory;
 
 string dupSub(Node* root){
+  // returning "" means duplicate subtree found
+
   string s = "";
 
   if(root==NULL) return s + MARKER;
