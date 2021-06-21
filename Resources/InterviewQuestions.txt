@@ -1,3 +1,7 @@
 https://stackoverflow.com/questions/60358983/finding-two-pairs-of-numbers-such-that-their-products-absolute-difference-is-min
 
 https://www.geeksforgeeks.org/find-largest-multiple-3-array-digits-set-2-time-o1-space/
+
+https://www.geeksforgeeks.org/memory-layout-of-c-program/
+
+https://www.geeksforgeeks.org/tail-recursion/
