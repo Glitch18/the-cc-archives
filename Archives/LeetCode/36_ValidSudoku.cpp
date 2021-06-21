@@ -1,5 +1,32 @@
 //https://leetcode.com/problems/valid-sudoku/
 
+//Efficient solution - single pass through the board
+
+class Solution {
+public:
+    bool isValidSudoku(vector<vector<char>>& board) {
+        unordered_map<int,unordered_set<char>> rows;
+        unordered_map<int,unordered_set<char>> col;
+        unordered_map<int,unordered_set<char>> box;
+
+        for(int i=0;i<board.size();i++){
+            for(int j=0;j<board.size();j++){
+                if(board[i][j]=='.') continue;
+                if(rows[i].find(board[i][j])!=rows[i].end()) return false;
+                if(col[j].find(board[i][j])!=col[j].end()) return false;
+                int box_index = (i/3)*3 + j/3;
+                if(box[box_index].find(board[i][j])!=box[box_index].end())
+                    return false;
+
+                rows[i].insert(board[i][j]);
+                col[j].insert(board[i][j]);
+                box[box_index].insert(board[i][j]);
+            }
+        }
+        return true;
+    }
+};
+
 //Naive solution - iterate over the board three times.
 class Solution {
 public:
@@ -47,33 +74,6 @@ public:
         for(int i=0;i<board.size();i+=3){
             for(int j=0;j<board.size();j+=3){
                 if(!checkBox(board,i,j)) return false;
-            }
-        }
-        return true;
-    }
-};
-
-//Efficient solution - single pass through the board
-
-class Solution {
-public:
-    bool isValidSudoku(vector<vector<char>>& board) {
-        unordered_map<int,unordered_set<char>> rows;
-        unordered_map<int,unordered_set<char>> col;
-        unordered_map<int,unordered_set<char>> box;
-
-        for(int i=0;i<board.size();i++){
-            for(int j=0;j<board.size();j++){
-                if(board[i][j]=='.') continue;
-                if(rows[i].find(board[i][j])!=rows[i].end()) return false;
-                if(col[j].find(board[i][j])!=col[j].end()) return false;
-                int box_index = (i/3)*3 + j/3;
-                if(box[box_index].find(board[i][j])!=box[box_index].end())
-                    return false;
-
-                rows[i].insert(board[i][j]);
-                col[j].insert(board[i][j]);
-                box[box_index].insert(board[i][j]);
             }
         }
         return true;
