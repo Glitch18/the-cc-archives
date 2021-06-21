@@ -8,7 +8,7 @@ public:
         for(int i=0;i<s.size();i++){
             if(s[i]=='(') st.push(i);
             else{
-                st.pop();
+                if(!st.empty()) st.pop();
                 if(st.empty()) st.push(i);
                 if(i-st.top()>max) max = i-st.top();
             }
