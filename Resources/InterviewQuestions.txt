@@ -5,3 +5,9 @@ https://www.geeksforgeeks.org/find-largest-multiple-3-array-digits-set-2-time-o1
 https://www.geeksforgeeks.org/memory-layout-of-c-program/
 
 https://www.geeksforgeeks.org/tail-recursion/
+
+https://www.geeksforgeeks.org/largest-sum-contiguous-subarray/
+
+https://www.geeksforgeeks.org/prefix-sum-2d-array/
+
+https://www.geeksforgeeks.org/count-all-square-sub-matrix-with-sum-greater-than-the-given-number-s/
